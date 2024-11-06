@@ -12,9 +12,8 @@ def download_and_extract(dataset):
     """Download and extract zip files from Kaggle."""
     api.dataset_download_files(dataset, unzip=True)
 
-for dataset in datasets:
-    download_and_extract(dataset)
-def split(datasets):
+
+def split():
     csv_files = [f"{file}" for file in os.listdir("./") if file.endswith(".csv")]
     dataframes = [pd.read_csv(file) for file in csv_files]
     data1 = dataframes[0]
@@ -34,4 +33,6 @@ if __name__ == "__main__":
     "takbiralam/covid19-symptoms-dataset",
     "zhiruo19/covid19-symptoms-classification"
     ]
+    for dataset in datasets:
+        download_and_extract(dataset)
     split(datasets)

@@ -2,12 +2,8 @@ import os
 import zipfile
 import pandas as pd
 
-kaggle_username = os.getenv('KAGGLE_USERNAME')
-kaggle_key = os.getenv('KAGGLE_KEY')
-print(kaggle_username)
-print(kaggle_key)
-os.environ['KAGGLE_USERNAME'] = kaggle_username
-os.environ['KAGGLE_KEY'] = kaggle_key
+os.environ['KAGGLE_USERNAME'] = os.getenv('KAGGLE_USERNAME')
+os.environ['KAGGLE_KEY'] = os.getenv('KAGGLE_KEY')
 
 from kaggle.api.kaggle_api_extended import KaggleApi
 from sklearn.model_selection import train_test_split

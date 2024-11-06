@@ -16,3 +16,11 @@ jobs:
 
       - name: Running splitting data script
         run: python3 split_data.py
+      
+      - name: Upload CSV to Google Sheets
+        env:
+          GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          echo "$GOOGLE_SHEETS_CREDENTIALS" > credencials.json
+          python3 upload.py

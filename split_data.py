@@ -14,7 +14,7 @@ def download_and_extract(dataset):
 
 for dataset in datasets:
     download_and_extract(dataset)
-def split():
+def split(datasets):
     csv_files = [f"{file}" for file in os.listdir("./") if file.endswith(".csv")]
     dataframes = [pd.read_csv(file) for file in csv_files]
     data1 = dataframes[0]
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     "takbiralam/covid19-symptoms-dataset",
     "zhiruo19/covid19-symptoms-classification"
     ]
-    split()
+    split(datasets)

@@ -4,9 +4,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 import argparse
 
-from split_data import csv_files
-
-
 def upload():
     SERVICE_ACCOUNT_FILE = 'credencials.json'
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']

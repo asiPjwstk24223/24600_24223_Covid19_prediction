@@ -35,4 +35,4 @@ if __name__ == "__main__":
     ]
     for dataset in datasets:
         download_and_extract(dataset)
-    split(datasets)
+    split()

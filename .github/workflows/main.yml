@@ -16,8 +16,8 @@ jobs:
 
       - name: Running splitting data script
         env:
-          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: python3 split_data.py
       
       - name: Upload CSV to Google Sheets
